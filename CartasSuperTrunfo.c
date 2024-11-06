@@ -1,6 +1,14 @@
 #include <stdio.h>
 
-int main() {
+float caculatePopulationalDensity(int population, float area) {
+    return (float) population / area;
+}
+
+float pibPerCapita(int population, float pib) {
+    return (float) pib / population;
+}
+
+void main() {
     char state[30], city[30];
     int population, touristicPoints, cityCode;
     float area, pib;
@@ -34,6 +42,6 @@ int main() {
     printf("Area: %.2f km2\n", area);
     printf("PIB: R$ %.2f\n", pib);
     printf("Numero de Pontos Turisticos: %d\n", touristicPoints);
-
-    return 0;
+    printf("PIB Per Capita: R$ %.2f\n", pibPerCapita(population, pib));
+    printf("Densidade populacional: %.2f km²\n", caculatePopulationalDensity(population, area));
 }
